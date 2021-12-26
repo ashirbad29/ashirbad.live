@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 module.exports = {
 	darkMode: 'class',
 	content: [
@@ -20,6 +22,9 @@ module.exports = {
 					800: '#181818',
 					900: '#0f0f0f',
 				},
+			},
+			fontFamily: {
+				sans: ['IBM Plex Sans', ...fontFamily.sans],
 			},
 		},
 	},
