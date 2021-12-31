@@ -96,16 +96,45 @@ export const MobileNav = () => {
 
 	return (
 		<>
-			<button onClick={toggleMenu} className='md:hidden'>
+			<button
+				onClick={toggleMenu}
+				className='md:hidden w-10 h-10 transition-all relative'
+			>
 				<MenuAlt1Icon
-					className={clsx(isMenuOpen ? 'hidden' : 'visible', 'h-5 w-5')}
+					className={clsx(
+						'transition-all absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4',
+						isMenuOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100',
+						'h-5 w-5'
+					)}
 				/>
-				<XIcon className={clsx(isMenuOpen ? 'visible' : 'hidden', 'h-5 w-5')} />
+				<XIcon
+					className={clsx(
+						'transition-all absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/4',
+						isMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-0',
+						'h-5 w-5'
+					)}
+				/>
 			</button>
 			{isMenuMounted && (
-				<ul className='w-full h-screen absolute left-0 md:hidden z-40 pt-6 mt-2 bg-gray-100 dark:bg-gray-900'>
-					{navItems.map(item => (
-						<li key={item.key}>
+				<ul
+					className={clsx(
+						'w-full h-screen absolute left-0 visible md:hidden z-40 pt-6 mt-2 bg-gray-50 dark:bg-gray-900 opacity-0 transition-all ease-in-out duration-300',
+						{ '!opacity-100 transition-opacity': isMenuMounted },
+						'flex flex-col gap-5'
+					)}
+				>
+					{navItems.map((item, idx) => (
+						<li
+							key={item.key}
+							className={clsx(
+								'border-b opacity-0 transition-all -translate-x-4 border-gray-300/70 dark:border-gray-300/20 text-gray-900 dark:text-gray-100 text-sm font-semibold pb-4',
+								{
+									'opacity-100 w-full translate-x-0 border-gray-300/70 dark:border-gray-300/20':
+										isMenuOpen,
+								}
+							)}
+							style={{ transitionDelay: `${150 + 50 * idx}ms` }}
+						>
 							<Link href={item.to}>{item.label}</Link>
 						</li>
 					))}
