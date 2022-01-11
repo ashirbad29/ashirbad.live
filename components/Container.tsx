@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import { useEffect,useState } from 'react';
+
 import Nav from './Nav';
 import { MobileNav } from './Nav';
 

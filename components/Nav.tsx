@@ -1,11 +1,11 @@
-import Link from 'next/link';
-import { useTheme } from 'next-themes';
-import { SunIcon, MoonIcon } from '@heroicons/react/outline';
-import { useRouter } from 'next/router';
-import clsx from 'clsx';
-import { useState, useEffect } from 'react';
-import useDelayedRender from 'use-delayed-render';
+import { MoonIcon,SunIcon } from '@heroicons/react/outline';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid';
+import clsx from 'clsx';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useTheme } from 'next-themes';
+import { useEffect,useState } from 'react';
+import useDelayedRender from 'use-delayed-render';
 
 const navItems = [
 	{
