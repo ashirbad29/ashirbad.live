@@ -1,6 +1,6 @@
 {
-	"extends": "next/core-web-vitals",
-	"plugins": ["simple-import-sort"],
+	"extends": ["next/core-web-vitals", "plugin:jsx-a11y/recommended"],
+	"plugins": ["simple-import-sort", "jsx-a11y"],
 
 	"rules": {
 		"simple-import-sort/imports": "error",
