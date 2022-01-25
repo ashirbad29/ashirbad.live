@@ -14,7 +14,7 @@ const Home: NextPage = () => {
 			<h1 className='font-bold text-3xl sm:text-5xl mt-2 mb-4 tracking-tight'>
 				Ashirbad Behera
 			</h1>
-			<p className='text-gray-600 dark:text-gray-300/60 font-medium pb-6'>
+			<p className='text-gray-400 dark:text-gray-300/60 font-medium pb-6'>
 				I&apos;m a CS Undergrad from bhubanaswer. I like exploring new
 				Technologies and talk about them with like minded people. Currently
 				i&apos;m building things for Web 🌟.
