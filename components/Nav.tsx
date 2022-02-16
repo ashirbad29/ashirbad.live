@@ -1,10 +1,10 @@
-import { MoonIcon,SunIcon } from '@heroicons/react/outline';
+import { MoonIcon, SunIcon } from '@heroicons/react/outline';
 import { MenuAlt1Icon, XIcon } from '@heroicons/react/solid';
 import clsx from 'clsx';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 import useDelayedRender from 'use-delayed-render';
 
 const navItems = [
@@ -70,13 +70,11 @@ const Nav = ({ mounted }: { mounted: boolean }) => {
 
 export const MobileNav = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
-		isMenuOpen,
-		{
-			enterDelay: 20,
-			exitDelay: 300,
-		}
-	);
+	// another thing to extract is rendered removing for unused vars warning
+	const { mounted: isMenuMounted } = useDelayedRender(isMenuOpen, {
+		enterDelay: 20,
+		exitDelay: 300,
+	});
 
 	const toggleMenu = () => {
 		if (isMenuOpen) {
