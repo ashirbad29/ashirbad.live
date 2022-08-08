@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["simple-import-sort", "jsx-a11y", "prettier"],
+
+  "rules": {
+    "prettier/prettier": ["error", { "singleQuote": true }],
+    "no-unused-vars": "warn",
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error"
+  }
+}
